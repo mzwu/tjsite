@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" href="https://img.icons8.com/material-outlined/24/000000/user--v1.png">
+	<title>Profile</title>
+</head>
+
+<nav>
+  <a href="https://user.tjhsst.edu/2022mwu/" class='text'>Home</a>
+  <a href="labs" class='text'>Labs</a>
+</nav>
+
+<body>
+	<p>
+	Hello {{user}} ({{year}})!
+	</p>
+	<img src={{pic}}>
+	<br><br>
+	{{#if name}}
+	    <p>Nickname: {{nickname}}</p>
+	{{/if}}
+	<a href='profile?q=update'>Update Nickname</a><br><br>
+	{{#if set}}
+	    <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <p>Set/Update Nickname</p>
+            <form action="setnickname" method="get">
+	        <input type="text" id="name" name="name" placeholder="Enter Nickname">
+	        <button type="submit" value="Submit">Submit</button><br><br>
+	    </form>
+          </div>
+        <script type="text/javascript" src="js/modal.js"></script>
+        
+        </div>
+	{{/if}}
+	<a href="logout" class='button'>Logout</a>
+</body>
+</html>

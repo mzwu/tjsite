@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" href="https://img.icons8.com/ios-glyphs/30/000000/trophy.png">
+	<title>House Points</title>
+</head>
+<body>
+
+<nav>
+  <a href="https://user.tjhsst.edu/2022mwu/" class='text'>Home</a>
+  <a href="labs" class='text'>Labs</a>
+</nav>
+
+<h1>House Points Log</h1>
+<a href='house_points'>Go Back</a><br><br>
+
+<form action="./house_points_log">
+      <label for="user">Filter by user:</label>
+      <select name="user" id="user">
+        {{#each users}}
+        <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+      <input type="submit" value="Apply">
+</form>
+<br>
+
+<table class="center">
+    <tr>
+        <th>Time</th>
+        <th>User</th>
+        <th>Points Added</th>
+        <th>Character</th>
+        <th>Fictional Universe</th>
+    </tr>
+    {{#each results}}
+    <tr>
+        <td>{{this.time}}</td>
+        <td>{{this.user}}</td>
+        <td>{{this.points}}</td>
+        <td>{{this.character}}</td>
+        <td>{{this.house}}</td>
+    </tr>
+    {{/each}}
+</table>

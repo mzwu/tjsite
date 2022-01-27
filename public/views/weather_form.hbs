@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" href="https://img.icons8.com/material-outlined/24/000000/partly-cloudy-day--v1.png">
+	<title>Weather Forecast</title>
+</head>
+<body>
+
+<nav>
+  <a href="https://user.tjhsst.edu/2022mwu/" class='text'>Home</a>
+  <a href="labs" class='text'>Labs</a>
+</nav>
+
+<h1>Weather Forecast</h1>
+
+<form action="./getweather" method="get">
+	<label for="id_lat">Latitude:</label>
+	<input type="text" id="id_lat" name="f_lat" placeholder="Enter Coordinate"><br><br>
+
+	<label for="id_long">Longitude:</label>
+	<input type="text" id="id_long" name="f_long" placeholder="Enter Coordinate"><br>
+
+    <br>
+
+	<button type="submit" value="Submit">Submit</button>
+</form>
+
+</body>
+</html>

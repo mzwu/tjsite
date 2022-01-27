@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.column {
+  float: left;
+  width: 25%;
+  padding: 0px;
+}
+
+.half {
+    float: left;
+    width: 50%;
+    padding: 0px;
+    /*border-style: solid;*/
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#live_zone {
+    display:block;
+    width:100%;
+    height:280px;
+    /*max-width: 500px;*/
+}
+
+.sign {
+    margin: auto;
+    width:fit-content;
+    height:fit-content;
+    padding:10px;
+    font-size:32px;
+    background-color:#c8e3ca;
+    border-radius: 10px;
+}
+</style>   
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" href="https://img.icons8.com/ios-glyphs/30/000000/trophy.png">
+	<title>House Points</title>
+</head>
+<body>
+
+<nav>
+  <a href="https://user.tjhsst.edu/2022mwu/" class='text'>Home</a>
+  <a href="labs" class='text'>Labs</a>
+</nav>
+
+<h1>House Points</h1>
+<a href='house_points_log'>View Log</a>
+
+<div class="row">
+    <div class="column">
+        <h3>Harry Potter</h3>
+        <p class="sign">{{hp}}</p>
+    </div>
+    <div class="column">
+        <h3>Hunger Games</h3>
+        <p class="sign">{{hg}}</p>
+    </div>
+    <div class="column">
+        <h3>Marvel Universe</h3>
+        <p class="sign">{{mu}}</p>
+    </div>
+    <div class="column">
+        <h3>Star Wars</h3>
+        <p class="sign">{{sw}}</p>
+    </div>
+</div>
+<br><br>
+
+<div class="half">
+    <h3>Add Points</h3>
+    <form action="./house_add_points">
+      <label for="chars">Select character:</label>
+      <select name="chars" id="chars">
+        {{#each names}}
+        <option value="{{this.c_id}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+      <br>
+      <label for="points">Number of points:</label>
+      <select name="points" id="points">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+      </select>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+</div>
+<div class="half">
+    <h3>Add Characters</h3>
+    <form action="./house_add_char">
+      <label for="house">Select house:</label>
+      <select name="house" id="house">
+        <option value="1">Harry Potter</option>
+        <option value="2">Hunger Games</option>
+        <option value="3">Marvel Universe</option>
+        <option value="4">Star Wars</option>
+      </select>
+      <br>
+      <label for="name">Character name:</label>
+      <input type="text" id="name" name="name" placeholder="">
+      <br>
+      <input type="submit" value="Submit"><br><br><br>
+    </form>
+</div>
+
+<h3>View Characters</h3>
+<div id="live_zone">
+    <p>
+        <a class="button" href="javascript:void(0);" onclick="getChar('1')">Harry Potter</a>
+        <a class="button" href="javascript:void(0);" onclick="getChar('2')">Hunger Games</a>
+        <a class="button" href="javascript:void(0);" onclick="getChar('3')">Marvel Universe</a>
+        <a class="button" href="javascript:void(0);" onclick="getChar('4')">Star Wars</a>
+    </p>
+    
+    <div id="names">
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+function getChar(house) {
+        
+    var ajax_params = {
+        'url'     : `https://user.tjhsst.edu/2022mwu/house_points_worker?house=` + house,
+        'type'    : "get",
+        'success' : onServerResponse    // the name of the callback function to call
+    }
+    // run AJAX function 
+    $.ajax( ajax_params )
+}
+    
+function onServerResponse(responseString){
+    console.log(responseString)
+    document.getElementById('names').innerHTML = responseString;
+}
+
+</script>
+
+</body>
+</html>

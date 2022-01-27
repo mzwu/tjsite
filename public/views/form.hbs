@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" href="https://img.icons8.com/material-outlined/24/000000/read.png">
+	<title>MadLib Form</title>
+</head>
+<body>
+
+<nav>
+  <a href="https://user.tjhsst.edu/2022mwu/" class='text'>Home</a>
+  <a href="labs" class='text'>Labs</a>
+</nav>
+
+<h1>MadLib Form</h1>
+
+<form action="./madlib" method="get">
+	<label for="id_name">What is your first name?</label>
+	<input type="text" id="id_name" name="f_name" placeholder="ur name"><br><br>
+	
+	<label for="id_age">How old are you?</label>
+	<input type="text" id="id_age" name="f_age" placeholder="#"><br><br>
+
+	<label for="id_cont">Where were you born?</label>
+	<select name="f_cont" id="id_cont">
+	    <option value="Africa">Africa</option>
+	    <option value="Antarctica">Antarctica</option>
+        <option value="Asia">Asia</option>
+        <option value="Australia">Australia</option>
+        <option value="Europe">Europe</option>
+        <option value="North America">North America</option>
+        <option value="South America">South America</option>
+    </select>
+	<br><br>
+	
+	<label for="id_food">What is your favorite food?</label>
+	<input type="text" id="id_food" name="f_food" placeholder="yummy"><br><br>
+	
+	<label for="id_subj">Which school subjects do you enjoy?</label><br>
+	<input type="checkbox" id="id_math" name="f_subj" value="Math">
+    <label for="id_math"> Math</label><br>
+    <input type="checkbox" id="id_sci" name="f_subj" value="Science">
+    <label for="id_sci"> Science</label><br>
+    <input type="checkbox" id="id_hist" name="f_subj" value="History">
+    <label for="id_hist"> History</label><br>
+    <input type="checkbox" id="id_eng" name="f_subj" value="English">
+    <label for="id_eng"> English</label><br><br>
+	
+	<label for="id_animal">Are you a dog or cat person?</label><br>
+	<input type="radio" id="id_dog" name="f_animal" value="dog">
+    <label for="id_dog">dog</label><br>
+    <input type="radio" id="id_cat" name="f_animal" value="cat">
+    <label for="id_cat">cat</label><br>
+    
+    <br>
+	
+	<button type="submit" value="Submit">Submit</button>
+</form> 
+
+</body>
+</html>

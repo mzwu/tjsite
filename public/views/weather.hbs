@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" href="https://img.icons8.com/material-outlined/24/000000/partly-cloudy-day--v1.png">
+	<title>Weather Forecast</title>
+</head>
+<body>
+
+<nav>
+  <a href="https://user.tjhsst.edu/2022mwu/" class='text'>Home</a>
+  <a href="labs" class='text'>Labs</a>
+</nav>
+
+<h1>Hourly Weather Forecast</h1>
+
+Latitude: {{lat}}<br>
+Longitude: {{long}}<br>
+Location: {{city}}, {{state}}<br><br>
+
+{{#each forecast}}
+    {{this.date}}, {{this.start}}<br>
+    Temperature: {{this.temp}} °{{this.unit}}<br>
+    Wind Speed: {{this.windSpeed}}, {{this.windDir}}<br>
+    {{this.short}}<br>
+    <img src={{this.icon}}>
+    <br><br>
+{{/each}}
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 0px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>    
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" href="https://img.icons8.com/material-outlined/24/000000/poll-topic.png">
+	<title>Voting</title>
+</head>
+<body>
+    
+<nav>
+  <a href="https://user.tjhsst.edu/2022mwu/" class='text'>Home</a>
+  <a href="labs" class='text'>Labs</a>
+</nav>
+
+<h1>Vote for the cutest dog:</h1>
+
+<div class="row">
+    <div class="column">
+        <h3>Zola</h3>
+        <img src="./img/zola.jpg" alt="zola" width="300" height="400"><br><br>
+        <a href="voting_update?name=zola" class='button'>Upvote</a>
+    </div>
+    <div class="column">
+        <h3>Wisty</h3>
+        <img src="./img/wisty.jpg" alt="wisty" width="300" height="400"><br><br>
+        <a href="voting_update?name=wisty" class='button'>Upvote</a>
+    </div>
+    <div class="column">
+        <h3>Denali</h3>
+        <img src="./img/denali.jpg" alt="denali" width="300" height="400"><br><br>
+        <a href="voting_update?name=denali" class='button'>Upvote</a>
+    </div>
+</div>
+
+<br><br><br><br>
+<a href='voting_results'>View Results</a>
+</body>
+</html>

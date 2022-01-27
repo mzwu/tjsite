@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" href="https://img.icons8.com/material-outlined/24/000000/map--v1.png">
+	<title>States Game</title>
+</head>
+<body>
+
+<nav>
+  <a href="https://user.tjhsst.edu/2022mwu/" class='text'>Home</a>
+  <a href="labs" class='text'>Labs</a>
+</nav>
+
+<h1>States Game Leaderboard</h1>
+<a href='states_game'>Go Back</a><br><br>
+<br>
+
+<table class="center">
+    <tr>
+        <th>Rank</th>
+        <th>User</th>
+        <th>Time</th>
+    </tr>
+    {{#each results}}
+    <tr>
+        <td>{{this.rank}}</td>
+        <td>{{this.user}}</td>
+        <td>{{this.time}}</td>
+    </tr>
+    {{/each}}
+</table>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookie Clicker</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" href="https://img.icons8.com/ios/50/000000/cookie.png">
+    <style>
+        .zoom:hover {
+          cursor: pointer;
+        }
+        .zoom:active {
+          transform: scale(1.1); 
+        }
+    </style>
+</head>
+<body>
+    
+<nav>
+  <a href="https://user.tjhsst.edu/2022mwu/" class='text'>Home</a>
+  <a href="labs" class='text'>Labs</a>
+</nav>
+    
+    <h1>Cookie Clicker</h1>
+    {{#if logged}}
+        {{#if nickname}}
+            <p>User: {{name}}</p>
+            {{else}}
+            <p>User: {{user}}</p>
+        {{/if}}
+        <a href="profile">Edit Profile</a>
+    {{else}}
+        <p>Guest Player</p>
+    {{/if}}
+    <p id="id_display"></p>
+    <img src="./img/cookie.PNG" alt="cookie" width="200" height="200" onclick="increment_and_update()" class="zoom">
+    <script type="text/javascript" src="js/set_cookie.js"></script>
+    <br><br>
+    {{#if logged}}
+        <a href="cookie/logout" class='button'>Logout</a>
+    {{else}}
+        <a href="{{login_link}}" class='button'>Login</a>
+    {{/if}}
+    
+    {{#if limit}}
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p>You have used up 5 page visits. Please log in to continue playing.</p>
+        <a href="{{login_link}}" class='button'>Login</a>
+      </div>
+    <script type="text/javascript" src="js/modal.js"></script>
+    
+    </div>
+    {{/if}}
+</body>
+</html>
